@@ -34,7 +34,7 @@ if load_data:
         with st.spinner('Lade Daten von Yahoo Finance...'):
             try:
                 # Daten herunterladen
-                data = yf.download(tickers, start=start_date, end=end_date)['Adj Close']
+                data = yf.download(tickers, start=start_date, end=end_date)['Close']
                 
                 # Bei nur einem Ticker gibt yfinance eine Series zurück, wir brauchen ein DataFrame
                 if isinstance(data, pd.Series):
